@@ -19,6 +19,7 @@ print(phone_number1)
 phone_number ="010-1111-2222"
 phone_number1=phone_number.replace("-","")
 print(phone_number1)
+<<<<<<< HEAD
 #문제27
 url="https://sharebook.kr"
 url_split=url.split(".")
@@ -37,3 +38,6 @@ string='abcd'
 string.replace('b','B')
 print(string)
 #예상:aBcd
+=======
+
+>>>>>>> origin/master

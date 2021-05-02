@@ -13,6 +13,7 @@
 
 5.replace() 함수
     정의:replace(old, new, [count]) -> replace("찾을값", "바꿀값", [바꿀횟수]
+<<<<<<< HEAD
     사용방법:replace는 좌측부터 값을 변경하는데, 우측부터 count만큼 변경하고 싶으면 어떻게 해야하나 해서 text.replace(",", "", -1)라고 실행해봤는데 되지 않았습니다.
 
 6.split()
@@ -42,3 +43,6 @@ upper은 대문자 lower은 소문자 capitalize는맨앞대문자
     사용방법함수를 사용하여 쓴다
 15.max(),min(),sum(),len()함수
 max는 최대 min은 최소 sum 합계 len은 총갯수
+=======
+    사용방법:replace는 좌측부터 값을 변경하는데, 우측부터 count만큼 변경하고 싶으면 어떻게 해야하나 해서 text.replace(",", "", -1)라고 실행해봤는데 되지 않았습니다.
+>>>>>>> origin/master
