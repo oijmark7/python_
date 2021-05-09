@@ -1,4 +1,4 @@
-
+print(7//3)
 
 #문제 1
 print("Hello World")
