@@ -77,3 +77,9 @@ max는 최대 min은 최소 sum 합계 len은 총갯수
     6.[키] 리스트과 [값]리스트을 딕셔너리 변환하는 방법    string_list = ['A','B','C']
                                                     dictionary = {string : 0 for string in string_list}
                                                     print(dictionary)
+26.if 활용
+    #정의:참거짓으로 참이면 실행 거짓이면 실행x
+    #사용방벙if 함수 :
+27.input()함수
+    #정의input이란 대입하는 것이다
+    #사용방법 함수=input("쓰고싶은말:"입력받는대입값)
