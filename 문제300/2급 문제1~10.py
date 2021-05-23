@@ -139,5 +139,4 @@ def solution(number):
 number=40
 ret=solution(number)
 
-
 print("Solution : return value of the function is",ret," .")
