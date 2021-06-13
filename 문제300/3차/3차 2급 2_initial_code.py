@@ -1,34 +1,39 @@
-def func_a(current_grade, last_grade, rank, max_diff_grade):#함수정의
-    arr_length = len(current_grade)#arr_length는 current_grade의 길이
-    count = 0# 숫자세는 변수
-    for i in range(arr_length):#길이만큼 반복한다
-        if current_grade[i] >= 80 and rank[i] <= arr_length // 10:# 현재점수가 80이상이고 랭크가 길이의 몫보다 이하일떄
-            count += 1#카운트 수를 1늘림
-        elif current_grade[i] >= 80 and rank[i] == 1:#현재점수가 80점이상이고 랭크가 1일떄
-            count += 1#카운트 수를 1늘림
+def func_a(current_grade, last_grade, rank, max_diff_grade):#장학생 구하기 함수
+    arr_length = len(current_grade)#전체 학생수
+    count = 0# 장학생수
+    for i in range(arr_length):#전체 학생수 만쿰 반복
+        if current_grade[i] >= 80 and rank[i] <= arr_length // 10:# 현재점수가 80이상이고 랭크가 길이의 몫보다 이하일떄:상위 10%위내 이면
+            count += 1#장학생수 증가
+        elif current_grade[i] >= 80 and rank[i] == 1:#현재점수가 80점이상이고 순위가 1등이면
+            count += 1#장학생수 증가
         elif max_diff_grade > 0 and max_diff_grade == current_grade[i] - last_grade[i]:# 최대 점수가 0초과이고 최대점수가 현재점수 - 최근 점수일떄
-            count += 1#카운트 수를 1늘림
+            count += 1#장학생수 증가
     return count#카운트 반환
 
-def func_b(current_grade):#함수정의
-    arr_length = len(current_grade)#arr_length는 현재점수길이와 같다
+def func_b(current_grade):#석차 구하는 함수
+    arr_length = len(current_grade)#Len(리스트): 리스트내 요소들의 개수
     rank = [1] * arr_length#랭크는 arr_length*[1]의값
-    for i in range(arr_length):#길이 만큼 반복하기
-        for j in range(arr_length):#길이 만큼반복하기
-            if current_grade[i] < current_grade[j]:#i가 j의 길이보다 작다면
-                rank[i] += 1#랭크[i]에 1더하기
+    for i in range(arr_length):#학생 수만큼 반복
+        for j in range(arr_length):#학생수만큼 반복
+            if current_grade[i] < current_grade[j]:# 이번학기[i]<이번학기[j]: 더 작으면 순위 내리기
+                rank[i] += 1#순위 내리기
+
     return rank# 랭크 반환하기
 
-def func_c(current_grade, last_grade):#함수정의
-    max_diff_grade = 1#변수정의
+    #i= 0  j=0 j=1 j=2 j=3 j=4
+    #i 1증가할때마다 j는 5번씩실행
+
+def func_c(current_grade, last_grade):#이번 학기와 직전학기의 최대
+    max_diff_grade = 1#최댓값 변수
     for i in range(len(current_grade)):#반복문
-        max_diff_grade = max(max_diff_grade, current_grade[i] - last_grade[i])#변수의 값을 변수의값, 현재값-마지막값을 뺸값으로 정의
+        max_diff_grade = max(max_diff_grade, current_grade[i] - last_grade[i])
+        #max(현재최대값,(이번학기-직접학기))
     return max_diff_grade#반환하기
 
 def solution(current_grade, last_grade):#함수정의
-    rank = func_b(current_grade)#랭크의 변수정의
-    max_diff_grade = func_c(current_grade, last_grade)#max_diff_grade의 변수정의
-    answer = func_a(current_grade, last_grade, rank, max_diff_grade)#answer의 변수정의
+    rank = func_b(current_grade)#이번 학기 순위 구하기
+    max_diff_grade = func_c(current_grade, last_grade)#이번학기와 직전학기의 의 최대값
+    answer = func_a(current_grade, last_grade, rank, max_diff_grade)#장학생수 구하기
     return answer#반환하기
 
 #아래는 테스트케이스 출력을 해보기 위한 코드입니다.

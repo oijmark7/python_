@@ -2,6 +2,13 @@
 #import math
 
 def solution(scores):#함수정의
+    #(sum(scores)-max(scores)-min(socres))//len(scores-2)
+    #sum(리스트): 리스트내 모든 합계
+    #max(리스트) : 리스트내 가장 큰 수
+    #min(리스트): 리스트내 가장 작은수
+    #len(리스트): 리스트내 요소의 수
+        #lenn()-2: 가장 큰수, 가장작은수 제외
+    #return 값 : 현재 함수를 종룟 하면서 되돌려주는 값
     answer = 0#답=0
     scores.remove(max(scores))#스코어의 최대값을 스코어에서 제거한다
     scores.remove(min(scores))#스코어의 최소값을 스코어에서 제거한다

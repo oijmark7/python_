@@ -1,12 +1,12 @@
 #다음과 같이 import를 사용할 수 있습니다.
 #import math
 
-def solution(words, word):#함수정의
-    count = 0#세는 변수
-    for i in words:#words의 수만큼 반복하기
-        for j in range(len(i)):#i의길이만큼 반복한다
-            if i[j]!=word[j]:#만약 i의 단어의 j-1번쨰 단어가 word의 j-1번쨰와 같은단어가 아니라면
-                count+=1#카운트 수를 1늘린다
+def solution(단어목록, 찾는단어):#함수정의
+    count = 0#오타수
+    for comp in words:#단어목록 만큼 하나씩 반복
+        for x,y in zip(comp,word):#검사단어=x 찾는단어=y
+            if x!=y:#검사단어롸 찾는단어가 같지 않으면
+                count+=1#오타 증가
     return count#반환
 
 #아래는 테스트케이스 출력을 해보기 위한 코드입니다.
