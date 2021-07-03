@@ -3,9 +3,11 @@
 
 def solution(scores, cutline):
     answer = 0
-    for i in scores:
+    for i in scores:#점수리스트를 하나씩 점우세 넣기
         if i >=cutline:
+            #해당점수가 커트라인보다 이상이면
             answer+=1
+            #합격자수 1증가
     return answer
 
 # 아래는 테스트케이스 출력을 해보기 위한 코드입니다.
